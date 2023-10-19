@@ -1,0 +1,356 @@
+/* ここから下に記載していく */
+body {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body a {
+    float: right;
+    font-size: 21px;
+    margin: 50px 50px 50px 0px;
+    text-decoration: none;
+    color: black;
+    transition-property: all;
+    transition-duration: .2s;
+}
+
+.header a:hover {
+    border-bottom: 2px solid black;
+    margin-bottom: 48px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    width: 1200px;
+}
+
+.content {
+    margin-top: 120px;
+}
+
+.topImage {
+    position: relative;
+}
+
+.header img {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.topImage img {
+    width: 100%;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.topImage h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.topImage h2 {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.section {
+    text-align: center;
+}
+
+.photo img {
+    float: left;
+    width: 25%;
+    margin-bottom: 60px;
+    margin-top: 80px;
+}
+
+.section h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+.section h2 {
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+.about p {
+    margin-top: 40px;
+    line-height: 40px;
+}
+
+.about h1 {
+    color: #ffd61a;
+}
+
+.news h1 {
+    color: #ffd61a;
+}
+
+.section h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.course p {
+    line-height: 40px;
+}
+
+.course {
+    margin-bottom: 60px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box1 {
+    flex: 1;
+}
+
+.box1 img {
+    width: 100%;
+}
+
+.box2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.b {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.topic {
+    width: 300px;
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+
+.topic:hover {
+    opacity: .5;
+}
+
+.topic img {
+    width: 100%;
+}
+
+.date {
+    margin-top: 30px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.topic p {
+    font-size: 13px;
+    line-height: 30px;
+    text-align: left;
+}
+
+.topics {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    width: 300px;
+    height: 60px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    background-color: #ffd61a;
+    border-radius: 10px;
+    margin-top: 60px;
+    box-shadow: 0 5px 0 darkkhaki;
+}
+
+.btn:hover {
+    background-color: #ffe81e;
+}
+
+.btn:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+
+.access {
+    background-color: #fafafa;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    margin-top: 60px;
+}
+
+.access table {
+    margin: 60px auto;
+}
+
+.access td {
+    text-align: left;
+}
+
+.access td:nth-of-type(1) {
+    width: 150px;
+}
+
+.access tr {
+    line-height: 30px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fafafa;
+    background-color: #707070;
+}
+
+.contact table {
+    margin: 0 auto;
+}
+
+.contact th {
+    border: solid 2px #707070;
+    border-left: none;
+    padding-left: 16px;
+    padding-right: 64px;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    vertical-align: top;
+}
+
+.contact td {
+    border: solid 2px #707070;
+    border-right: none;
+    width: 328px;
+    text-align: left;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.contact span {
+    line-height: 24px;
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.form {
+    margin-top: 30px;
+    margin-bottom: 140px;
+}
+
+.textbox1 {
+    width: 480px;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.textbox2 {
+    width: 430px;
+    text-align: left;
+    margin-right: 50px;
+}
+
+.textbox3 {
+    width: 480px;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.paragraph {
+    line-height: 25px;
+    margin-top: 40px;
+}
+
+.contact {
+    line-height: 20px;
+}
+
+.contact p {
+    line-height: 20px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+.line {
+    width: 300px;
+}
+
+table textarea {
+    width: 300px;
+    height: 100px;
+}
+
+select {
+    width: 308px;
+}
+
+/* チェックボックスの非表示 */
+input[type="checkbox"]{
+    display:none;
+}
+
+.label{
+    display: inline-block;
+    position: relative;
+    cursor:pointer;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding-left: 33px;
+    padding-top: 2px;
+   
+}
+
+.label::after{
+    content: '';
+    border:none;
+    background-color: white;
+    border: 1px solid gray;
+    position: absolute;
+    top: 50%;
+    width:16px;
+    height: 16px;
+    border-radius: 5px;
+    display: block;
+    margin-top: -8px;
+    margin-left: -33px;   
+    z-index: 2;
+    color: white;
+}
+
+input[type=checkbox]:checked + .label:after{
+    background-image: url(../img/icon_052210_16.png);
+}
+
+
+
+
+

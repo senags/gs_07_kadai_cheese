@@ -1,0 +1,565 @@
+/* フォントのインポート */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@500&display=swap');
+
+
+/* 画像を消す（fadeinって名前にしてますが）
+作りやすいようにdelay2s-0sにした */
+.fadein {
+    animation-name: fadeoutanime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    opacity: 1;
+    text-align: center;
+    color: black;
+    z-index: 5;
+    background-color: white;
+    font-family: "Sawarabi Mincho"; 
+    font-size: 90px;
+    height: 100vh;
+    padding-top: 23%;
+}
+
+/* タイトルを消す。 */
+@keyframes fadeoutanime{
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* 背景イメージを設定*/
+body{
+    background-image: url(../img/am611-09tbw-001.jpg);
+    background-repeat: no-repeat;
+    /* 背景の繰り返しをなしに */
+    background-size: cover; /* 画面全面に */
+    background-position: center; 
+    background-attachment: fixed; /* 画像の位置を固定 */
+    align-items: right ;  /* 項目の表示は右の余白を使う */
+    position: relative;
+    z-index: 0;
+    color: white;
+}
+
+/* 項目の大枠 */
+.container{
+    /* コンテンツを書く枠をわかりやすくするために、作成中は下記の枠線を表示した。 
+    作りやすいようにdelay2s-0sに*/
+    /* border: 1px solid white; */
+    width: 65%;
+    position: absolute;
+    left: 35%;
+    top: 0px;
+    z-index: 0;
+    /* 以下アニメーション用CSS */
+    animation-name: fadein;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    opacity: 0;
+    font-size: 18px;
+}
+
+/* タイトルがフェードアウトした時にコンテンツを出す */
+@keyframes fadein{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.racelogo img{
+    width: 300px;
+    z-index: 0;
+}
+
+.glogo img{
+    width: 100px;
+    margin-left: 30px;
+    z-index: 0;
+}
+
+/* タイトルとG１ロゴを横に中央揃えで並べる */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 320px;
+    z-index: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background: #fff;
+    position: absolute;
+    z-index: 6;
+  }
+  
+  .logo {
+    font-size: 24px;
+    margin-bottom: 800px;
+  }
+  
+  /* ここから下がハンバーガーメニューに関するCSS */
+    
+  /* チェックボックスを非表示にする */
+  .drawer_hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.5s;
+    position: absolute;
+  }
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 8px;
+  }
+  
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+    
+  /* メニューのデザイン*/
+    .nav_content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0%;
+        right: 100%; /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: rgba(110, 110, 110,.5);
+        transition: .5s;
+        text-align: right;
+        padding-top: 50px;
+        padding-right: 25px;
+        line-height: 40px;
+      }
+
+      .nav_item:hover{
+        border-bottom: 1px solid #fff;
+      }
+  
+  
+  /* メニュー黒ポチを消す */
+  .nav_list {
+    list-style: none;
+  }
+  
+  .nav_item a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Cormorant', serif;
+    font-size: 30px;
+  }
+  
+  /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked ~ .nav_content {
+        right: 80%;
+    }
+
+    .loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 555;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .loader .txt {
+      font-size: 45px;
+      font-weight: bold;
+      color: rgb(30, 50, 93);
+      display: none;
+    }
+
+    /* ハンバーガーは以上 */
+    
+.about{
+    text-align: center;
+}
+
+/* 英語見出しのCSS */
+body h1{
+    font-family: 'Cormorant', serif;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+/* 日本語見出しのCSS */
+body h2{
+    font-family: "Sawarabi Mincho"; 
+    font-size:30px;
+    margin-bottom: 20px;
+}
+
+body p{
+    font-family: "Sawarabi Mincho";
+    line-height: 30px;
+}
+
+.g1{
+    margin-bottom: 40px;
+}
+
+/* 写真の下の余白を設定 */
+.about img{
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+.course{
+    text-align: center;
+    margin-top: 800px;
+}
+
+.course img{
+    width: 70%;
+    margin-top: 40px ;
+}
+
+/* 天候と芝状態を横並びにする。 */
+.condition{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 800px;
+}
+
+.condition img{
+    width: 100px;
+}
+
+.racecard{
+    text-align: center;
+}
+
+.racecard img{
+    width: 80%;
+    margin-top: -2px;
+}
+
+.card{
+    margin-top: 40px;
+    margin-bottom: 800px;
+}
+
+.raceresult{
+    text-align: center;
+}
+
+
+.goal img{
+    width:500px;
+}
+
+/* ここが芝 */
+.goal{
+    margin-left:4.5%;
+    margin-top: 100px;
+    position: relative;
+}
+
+.shiba{
+    height: 344px;
+}
+
+.detail{
+    width: 90%;
+    margin: 100px auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row img{
+    width: 50%;
+    flex:1;
+}
+
+.box{
+    flex:1;
+    
+}
+
+.horse{
+    width: 300px;
+    margin-left: 20px;
+}
+
+.jocky{
+    width: 390px;
+    margin-right: 20px;
+}
+
+.a{
+    display: flex;
+    align-items: center;
+}
+
+/* ボックス内で右寄せにする */
+.b{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+h5{
+    font-size: 20px;
+    font-family: "Sawarabi Mincho";
+}
+
+.horse p{
+    font-size: 16px;
+    font-family: "Sawarabi Mincho";
+}
+
+.jocky p{
+    font-size: 16px;
+    font-family: "Sawarabi Mincho";
+}
+
+.video{
+    text-align: center;
+    margin: 50px auto;
+}
+
+.video p{
+    font-size: 14px;
+    text-align: left;
+}
+
+h4{
+    font-family: "Sawarabi Mincho"; 
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+iframe{
+    float:left;
+    width: 50%;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+/* myresult用のCSS */
+.myresult{
+    margin-top: 800px;
+    text-align: center;
+    margin-bottom: 300px;
+}
+
+.myresult h3{
+    font-family: "Sawarabi Mincho"; 
+}
+
+
+.baken{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    position: relative;
+}
+
+.myresult img{
+    width:30%;
+}
+
+.buttonwrap{
+    display: flex;
+    justify-content: space-around;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+.buttonwrap p{
+    background-color: white;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px; 
+    width: 150px;
+    height: 30px;
+    font-family: "Nico Moji";
+}
+
+.buttonwrap p:hover{
+    color:red;
+    transition-property: color;
+    transition-duration: 2s;
+}
+
+.footer{
+    font-size: 14px;
+    color: black;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+}
+
+/* 以下アニメ用CSS（馬画像など） */
+#Case1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /*ここからはデザイン*/
+    top: 10%;
+    left: 0;
+}
+
+#Case2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /*ここからはデザイン*/
+    top: 50%;
+    left: 0;
+}
+
+#Case3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /*ここからはデザイン*/
+    top: 60%;
+    left: 0;
+}
+
+#Case1 img {
+    width: 100px;
+}
+
+#Case2 img {
+    width: 100px;
+}
+
+#Case3 img {
+    width: 100px;
+}
+
+.horsedetail1{
+    position: absolute;
+    top: 40px;
+    left: 520px;
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    font-family: "Sawarabi Mincho";
+    display: flex;
+    flex-direction: column;
+}
+
+.horsedetail1 img{
+    height: 100px;
+    width: 80px;
+    transform: translate(0px,0px) ;
+
+}
+
+.horsedetail2{
+    position: absolute;
+    top: 180px;
+    left: 520px;
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    font-family: "Sawarabi Mincho";
+    display: flex;
+    flex-direction: column;
+}
+
+.horsedetail2 img{
+    height:100px;
+    width: 80px;
+    transform: translate(0px,35px) ;
+ 
+}
+
+.horsedetail3{
+    position: absolute;
+    top: 215px;
+    left: 520px;
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    font-family: "Sawarabi Mincho";
+   display: flex;
+   flex-direction: column;
+}
+
+.horsedetail3 img{
+    height: 100px;
+    width: 77px; 
+    transform: translate(100px,0px) ;
+}
+
+.raceresult h3{
+    font-family: "Sawarabi Mincho";
+}
+
+
+
+
+
+
+
